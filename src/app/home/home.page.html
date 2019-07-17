@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Weather
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+    <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="/assets/style.css">
+
+
+
+
+
+
+
+<ion-content color="medium">
+  
+  <video autoplay muted loop id="myVideo">
+    <source src="/assets/Sky2.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+    <div class="hero" >
+      <div class="container">
+        <form class="find-location">
+          <input type="text" placeholder="Find your location..." name="city"[(ngModel)]="city" >
+          <input type="submit" value="Find" (click)="onFind()">
+        </form>
+</div>
+</div>
+<div class="forecast-table">
+  <div class="container">
+    <div class="forecast-container">
+      <div class="today forecast">
+        <div class="forecast-header">
+          <div class="day">{{today | date}}</div>
+          <div class="date"></div>
+        </div>
+        
+        <!---forecast-header-->
+
+        <div class="forecast-content">
+          <div class="location">{{list?.city.name}},{{list?.city.country}}</div>
+          <div class="degree">
+            <div class="num">{{list?.list[0].main.temp_max}}<sup>o</sup>C</div>
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/w/{{list?.list[0].weather[0].icon}}.png" alt="" width=100>
+            </div>	
+          </div>
+          <span><img src="/assets/images/icon-umberella.png" alt="">{{list?.list[0].main.humidity}}</span>
+          <span><img src="/assets/images/icon-wind.png" alt="">{{list?.list[0].wind.speed}}km/h</span>
+          <span><img src="/assets/images/icon-compass.png" alt="">{{list?.list[0].weather[0].description}}</span>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="forecast-header">
+          <div class="day">Tomorrow</div>
+        </div> 
+        
+        
+        <!-- .forecast-header -->
+
+        <div class="forecast-content">
+          <div class="forecast-icon">
+            <img src="http://openweathermap.org/img/w/{{list?.list[1].weather[0].icon}}.png" alt="" width=90>
+          </div>
+          <div class="degree">{{list?.list[1].main.temp_max}}<sup>o</sup>C</div>
+          <small>{{list?.list[1].main.temp_min}}<sup>o</sup></small>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="forecast-header">
+          <div class="day">In 2 Days time</div>
+        </div> 
+        
+        <!-- .forecast-header -->
+
+        <div class="forecast-content">
+          <div class="forecast-icon">
+            <img src="http://openweathermap.org/img/w/{{list?.list[2].weather[0].icon}}.png" alt="" width=90>
+          </div>
+          <div class="degree">{{list?.list[2].main.temp_max}}<sup>o</sup>C</div>
+          <small>{{list?.list[2].main.temp_min}}<sup>o</sup></small>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="forecast-header">
+          <div class="day">In 3 Days time</div>
+        </div> 
+        
+        <!-- .forecast-header -->
+
+        <div class="forecast-content">
+          <div class="forecast-icon">
+            <img src="http://openweathermap.org/img/w/{{list?.list[3].weather[0].icon}}.png" alt="" width=90>
+          </div>
+          <div class="degree">{{list?.list[3].main.temp_max}}<sup>o</sup>C</div>
+          <small>{{list?.list[3].main.temp_min}}<sup>o</sup></small>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="forecast-header">
+          <div class="day">In 4 Days time</div>
+        </div> 
+        
+        <!-- .forecast-header -->
+
+        <div class="forecast-content">
+          <div class="forecast-icon">
+            <img src="http://openweathermap.org/img/w/{{list?.list[4].weather[0].icon}}.png" alt="" width=90>
+          </div>
+          <div class="degree">{{list?.list[4].main.temp_max}}&nbsp;<sup>o</sup>C</div>
+          <small>{{list?.list[4].main.temp_min}}<sup>o</sup></small>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="forecast-header">
+          <div class="day">In 5 Days time</div>
+        </div> 
+        
+        <!-- .forecast-header -->
+
+        <div class="forecast-content">
+          <div class="forecast-icon">
+            <img src="http://openweathermap.org/img/w/{{list?.list[5].weather[0].icon}}.png" alt="" width=90>
+          </div>
+          <div class="degree">{{list?.list[5].main.temp_max}}&nbsp;<sup>o</sup>C</div>
+          <small>{{list?.list[5].main.temp_min}}<sup>o</sup></small>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="forecast-header">
+          <div class="day">In 6 Days time</div>
+        </div> 
+        
+        <!-- .forecast-header -->
+
+        <div class="forecast-content">
+          <div class="forecast-icon">
+            <img src="http://openweathermap.org/img/w/{{list?.list[6].weather[0].icon}}.png" alt="" width=90>
+          </div>
+          <div class="degree">{{list?.list[6].main.temp_max}}<sup>o</sup>C</div>
+          <small>{{list?.list[6].main.temp_min}}<sup>o</sup></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <script src="/assets/js/jquery-1.11.1.min.js"></script>
+		<script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/app.js"></script>
+</ion-content>
+
+<!--Footer-->
+
+<ion-footer >
+  <ion-toolbar color="dark">
+    <ion-title>Created By <br> Thulani Nocuza<br><br><br></ion-title>
+  </ion-toolbar>
+</ion-footer>

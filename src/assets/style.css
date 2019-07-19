@@ -32,11 +32,11 @@ audio:not([controls]) {
 [hidden], template {
   display: none; }
 
-html {
+.ion-content {
   background: #fff;
   color:black;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 50%;
+  -ms-text-size-adjust: 25%; }
 
 html,
 button,

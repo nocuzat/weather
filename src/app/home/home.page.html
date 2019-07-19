@@ -8,7 +8,8 @@
 
     <meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    
 
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
     <link href="/assets/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -42,7 +43,7 @@
       <div class="today forecast">
         <div class="forecast-header">
           <div class="day">{{today | date}}</div>
-          <div class="date"></div>
+          <div class="date">{{list?.list[0].dt_txt| date : 'EEEE'}}</div>
         </div>
         
         <!---forecast-header-->
@@ -62,7 +63,7 @@
       </div>
       <div class="forecast">
         <div class="forecast-header">
-          <div class="day">Tomorrow</div>
+          <div class="day">{{list?.list[1].dt_txt| date : 'EEEE'}}</div>
         </div> 
         
         
@@ -78,7 +79,7 @@
       </div>
       <div class="forecast">
         <div class="forecast-header">
-          <div class="day">In 2 Days time</div>
+          <div class="day">{{list?.list[2].dt_txt| date : 'EEEE'}}</div>
         </div> 
         
         <!-- .forecast-header -->
@@ -93,7 +94,7 @@
       </div>
       <div class="forecast">
         <div class="forecast-header">
-          <div class="day">In 3 Days time</div>
+          <div class="day">{{list?.list[3].dt_txt| date : 'EEEE'}}</div>
         </div> 
         
         <!-- .forecast-header -->
@@ -108,7 +109,7 @@
       </div>
       <div class="forecast">
         <div class="forecast-header">
-          <div class="day">In 4 Days time</div>
+          <div class="day">{{list?.list[4].dt_txt| date : 'EEEE'}}</div>
         </div> 
         
         <!-- .forecast-header -->
@@ -123,7 +124,7 @@
       </div>
       <div class="forecast">
         <div class="forecast-header">
-          <div class="day">In 5 Days time</div>
+          <div class="day">{{list?.list[5].dt_txt| date : 'EEEE'}}</div>
         </div> 
         
         <!-- .forecast-header -->
@@ -138,7 +139,7 @@
       </div>
       <div class="forecast">
         <div class="forecast-header">
-          <div class="day">In 6 Days time</div>
+          <div class="day">{{list?.list[6].dt_txt| date : 'EEEE'}}</div>
         </div> 
         
         <!-- .forecast-header -->
@@ -166,6 +167,6 @@
 
 <ion-footer >
   <ion-toolbar color="dark">
-    <ion-title>Created By <br> Thulani Nocuza<br><br><br></ion-title>
+    <ion-title> Created By <br> Thulani Nocuza<br><br><br></ion-title>
   </ion-toolbar>
 </ion-footer>
